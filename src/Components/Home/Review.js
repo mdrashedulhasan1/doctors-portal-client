@@ -5,8 +5,8 @@ const Review = ({ review }) => {
         <section>
             <p>{review.review}</p>
             <div className='flex items-center mt-2'>
-                <div class="avatar">
-                    <div class="rounded-full ring ring-primary ring-offset-base-100">
+                <div className="avatar">
+                    <div className="rounded-full ring ring-primary ring-offset-base-100">
                         <img src={review.img} alt="" />
                     </div>
                 </div>

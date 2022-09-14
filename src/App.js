@@ -6,6 +6,7 @@ import Navbar from './Components/Shared/Navbar';
 import Appointment from "./Components/Appointment/Appointment";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Login/Register";
+import PrivateRoute from "./Components/Login/PrivateRoute";
 function App() {
   return (
     <div className="App">
@@ -13,7 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>} />
         <Route path="/about" element={<About></About>} />
-        <Route path="/appointment" element={<Appointment></Appointment>} />
+        <Route path="/appointment" element={
+          <PrivateRoute>
+            <Appointment></Appointment>
+          </PrivateRoute>
+        } />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
       </Routes>
