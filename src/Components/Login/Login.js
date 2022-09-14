@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import Loading from '../Shared/Loading';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -16,7 +17,7 @@ const Login = () => {
         console.log(user || gUser);
     }
     if (loading || gLoading) {
-        return <button className="btn loading">loading</button>
+        return <Loading></Loading>;
     }
     let loginError;
     if (error || gError) {

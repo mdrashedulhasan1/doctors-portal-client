@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-fi
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -17,7 +18,7 @@ const Register = () => {
         console.log(user || gUser);
     }
     if (loading || gLoading) {
-        return <button className="btn loading">loading</button>
+        return <Loading></Loading>
     }
     let loginError;
     if (error || gError) {
@@ -41,7 +42,7 @@ const Register = () => {
                                 type="text"
                                 placeholder="Your Name"
                                 className="input input-bordered w-full max-w-xs"
-                                {...register("text", {
+                                {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is Required'
