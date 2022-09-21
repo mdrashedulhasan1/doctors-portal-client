@@ -7,6 +7,8 @@ import Appointment from "./Components/Appointment/Appointment";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Login/Register";
 import PrivateRoute from "./Components/Login/PrivateRoute";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -22,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/register" element={<Register></Register>} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
